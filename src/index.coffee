@@ -17,7 +17,7 @@ module.exports = (app, options) ->
     else
       fixtureLoader.loadFixtures app.models, options.fixturePath
 
-  loadFixtures: (fixturesPath) ->
+  loadFixturesFromPath = (fixturesPath) ->
     if not options.append
       fixtureLoader.purgeDatabase app.models
       .then ->
@@ -33,5 +33,5 @@ module.exports = (app, options) ->
     loadFixtures()
   
   app.loadFixturesFromPath = (fixturesPath) ->
-    loadFixtures(fixturesPath)
+    loadFixturesFromPath(fixturesPath)
 
