@@ -32,6 +32,6 @@ module.exports = (app, options) ->
   app.loadFixtures = ->
     loadFixtures()
   
-  app.loadFixturesFromPath(fixturesPath) ->
+  app.loadFixturesFromPath = (fixturesPath) ->
     loadFixtures(fixturesPath)
 
