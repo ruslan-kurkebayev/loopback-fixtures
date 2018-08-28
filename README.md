@@ -1,6 +1,6 @@
 # loopback-fixtures
 
-Expressive fixtures generator for Loopback
+Expressive fixtures generator for Loopback ([forked from `https://github.com/sghribi/loopback-fixtures`](https://github.com/sghribi/loopback-fixtures))
 
 [![build status](https://secure.travis-ci.org/sghribi/loopback-fixtures.svg)](http://travis-ci.org/sghribi/loopback-fixtures)
 [![dependency status](https://david-dm.org/sghribi/loopback-fixtures.svg)](https://david-dm.org/sghribi/loopback-fixtures)
