@@ -22,3 +22,6 @@ module.exports = (app, options) ->
 
   app.loadFixtures = ->
     loadFixtures()
+  
+  app.loadFixturesFromPath: (models, fixturesPath) ->
+    fixtureLoader.loadFixtures app.models, options.fixturePath
