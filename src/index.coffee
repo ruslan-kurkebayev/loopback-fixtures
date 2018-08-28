@@ -17,11 +17,21 @@ module.exports = (app, options) ->
     else
       fixtureLoader.loadFixtures app.models, options.fixturePath
 
+  loadFixtures: (fixturesPath) ->
+    if not options.append
+      fixtureLoader.purgeDatabase app.models
+      .then ->
+        console.log 'Data purged'
+        fixtureLoader.loadFixtures app.models, fixturesPath
+    else
+      fixtureLoader.loadFixtures app.models, fixturesPath
+
   if options.autoLoad
     loadFixtures()
 
   app.loadFixtures = ->
     loadFixtures()
   
-  app.loadFixturesFromPath(models, fixturesPath) ->
-    fixtureLoader.loadFixtures app.models, options.fixturePath
+  app.loadFixturesFromPath(fixturesPath) ->
+    loadFixtures(fixturesPath)
+
